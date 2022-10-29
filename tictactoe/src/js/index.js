@@ -55,3 +55,10 @@ function createSlots(){
     movementsList = [...slotsList];
     board.append(...slotsList)
 }
+
+function myEnemy() {
+    if(movementsList.length >= 1) {
+        const enemySlot = movementsList[randomNumber(0, movementsList.length - 1)]
+        enemySlot.click()
+    }
+}
