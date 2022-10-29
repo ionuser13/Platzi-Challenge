@@ -17,7 +17,7 @@ board.classList.add("disabled");
 function clearProcess() {
     currentSlot.classList.add("disabled");
     currentSlot.removeEventListener("click", printValue);
-    listOfMovements = listOfMovements.filter(elem => elem.id !== currentSlot.id)
+    movementsList = movementsList.filter(elem => elem.id !== currentSlot.id)
     checkWinner()
 }
 
@@ -37,4 +37,21 @@ function printValue(event){
         player2.active = false;
         clearProcess();
     }
+}
+
+function createSlots(){
+    let subArr = [];
+    for (let index = 0; index < 9; index++) {
+        const slot = document.createElement("div");
+        slot.id = `slot-${index}`
+        slot.addEventListener("click", printValue)
+        slotsList.push(slot);
+        subArr.push(slot);
+        if(subArr.length === 3) {
+            rows.push(subArr);
+            subArr = []
+        }
+    }
+    movementsList = [...slotsList];
+    board.append(...slotsList)
 }
