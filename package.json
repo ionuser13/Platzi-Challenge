@@ -1,0 +1,24 @@
+{
+  "name": "platzichallenge--js-dev",
+  "version": "1.0.0",
+  "description": "platzi challenges",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionuser13/PlatziChallenge--js-dev.git"
+  },
+  "keywords": [
+    "js",
+    "frontend",
+    "javascript"
+  ],
+  "author": "John Chacpi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ionuser13/PlatziChallenge--js-dev/issues"
+  },
+  "homepage": "https://github.com/ionuser13/PlatziChallenge--js-dev#readme"
+}
