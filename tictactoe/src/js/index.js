@@ -13,3 +13,7 @@ let player1, player2 = {
 }
 buttons = Array.from(buttons)
 board.classList.add("disabled");
+
+function printValue(){
+    
+}
