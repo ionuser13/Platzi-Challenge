@@ -9,14 +9,22 @@
   <link rel="stylesheet" href="./src/styles.css">
 </head>
 <body>
+  <div class="body">
+    <h2 class="generate">Generate Password</h2>
   <form class="form" id="form">
-    <p class="password">Aquí aparecerá tu contraseña: </p>
+    <p class="password">Generated Password</p>
     <input type="text" disabled id="password">
-    <button disabled type="button" id="button-copy">Copiar contraseña</button>
-    <div class="option">
-      <p id="password-length">55</p>
-      <input type="range" name="length" id="input-length" min="10" max="100">
-      <p>Define el total de caracteres de tu contraseña</p>
+    
+    <div class="option" id="length-input">
+      <div class="text">
+        <p>Length:</p>
+        <p id="password-length">55</p>
+      </div>
+      <div id="min-max">
+        <p id="min-input">5</p>
+        <input type="range" name="length" id="input-length" min="12" max="50">
+        <p id="max-input">50</p>
+      </div>
     </div>
     <div class="option">
       <input type="checkbox" name="letters" id="">
@@ -36,9 +44,11 @@
     </div>
     <div class="option">
       <button type="submit" id="generate-button">Genera tu Constraseña</button>
+      <button disabled type="button" id="button-copy">Copiar contraseña</button>
     </div>
   </form>
   <div id="modal"></div>
+  </div>
   <script src="./src/index.js"></script>
 </body>
 

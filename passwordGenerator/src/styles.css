@@ -1,5 +1,6 @@
 :root{
-  --bg-color: #121f3d;
+  --bg-color: #01072b;
+  --input-color: #02113e;
   --text-color: white;
   --border-color: #40587c;
   --button-text-color: rgb(131, 217, 136);
@@ -9,16 +10,22 @@
   margin: 0;
   box-sizing: border-box;
 }
-body {
+.body {
   background-color: var(--bg-color);
+  width: 100vw;
   color:var(--text-color);
   font-family: sans-serif;
-  font-size: 26px;
+  font-size: 20px;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-
+}
+.generate {
+  max-width: 700px;
+  width: 80%;
+  text-align: left;
+  margin: 12px auto;
 }
 .form {
   border: 1px solid var(--border-color);
@@ -26,10 +33,33 @@ body {
   border-radius: 15px;
   width: 80%;
   max-width: 700px;
+  margin: 0 auto
+}
+.password, .text {
+  font-size: 16px;
+  color: var(--border-color)
 }
 .option {
   display: flex;
+  /* flex-direction: column; */
   margin: 10px 0;
+}
+#length-input {
+  flex-direction: column;
+}
+#min-max {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 12px 0;
+}
+#input-length {
+  width: 50%;
+  max-width: 70%;
+}
+.text {
+  display: flex;
+  gap: 8px;
 }
 .option input {
   margin-right: 10px;
@@ -37,9 +67,11 @@ body {
 #password:disabled {
   cursor: not-allowed;
   border: none;
-  border-bottom: 1px solid var(--border-color);
-  background: transparent;
-  padding: 10px 0;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--input-color);
+  padding: 10px 40px;
+  margin: 10px 0;
   font-size: 26px;
   font-weight: 900;
   width: 100%;
