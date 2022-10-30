@@ -56,6 +56,10 @@ function createSlots(){
     board.append(...slotsList)
 }
 
+function randomNumber(min, max) {
+    return Math.floor(Math.random()*(max - min + 1))
+}
+
 function myEnemy() {
     if(movementsList.length >= 1) {
         const enemySlot = movementsList[randomNumber(0, movementsList.length - 1)]
