@@ -98,5 +98,21 @@ buttons.map(((button) => {
     button.addEventListener("click", (e) => {
         const target = e.target;
         const value = target.textContent;
+
+        board.classList.remove("disabled");
+
+        if(value === "⭕") {
+            player1.value = value;
+            player1.active = true;
+            player2.value = "❌"
+        }
+        else {
+            player1.value = value;
+            player1.active = true;
+            player2.value = "⭕"
+        }
+        buttons.map((button) => {
+            button.disabled = true;
+        })
     })
 }))
