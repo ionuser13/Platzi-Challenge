@@ -81,3 +81,22 @@ function checkWinner() {
         winnerProcess(player2, "Computadora")
     }
 }
+
+function winnerProcess(player, playerName) {
+    for (let i = 0; i < movementsList.length; i++) {
+        const element = movementsList[i];
+        element.removeEventListener("click", printValue)
+    }
+    movementsList = [];
+    modal.classList.remove("invisible")
+
+    modal.innerHTML = `<h2>Ha ganado ${playerName} ${player.value}</h2>`
+}
+
+createSlots();
+buttons.map(((button) => {
+    button.addEventListener("click", (e) => {
+        const target = e.target;
+        const value = target.textContent;
+    })
+}))
