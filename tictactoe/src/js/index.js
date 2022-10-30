@@ -66,3 +66,18 @@ function myEnemy() {
         enemySlot.click()
     }
 }
+
+function checkWinner() {
+    const combinations = rows.map(slots => {
+        return slots.map(slot => slot.textContent).join("")
+    })
+    if(movementsList.length === 0) {
+        alert("Empate, no hay ganador")
+    }
+    else if(combinations.some(combination => combination === player1.value.repeat(3))) {
+        winnerProcess(player1, "Tu user")
+    }
+    else if(combinations.some(combination => combination === player2.value.repeat(3))) {
+        winnerProcess(player2, "Computadora")
+    }
+}
