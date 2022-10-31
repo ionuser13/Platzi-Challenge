@@ -61,6 +61,15 @@
 }
 #input-length {
   width: 70%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 2s;
+  transition: opacity 2s;
+  margin: auto 0;
+  background-color: var(--track-color);
 }
 .text {
   display: flex;
