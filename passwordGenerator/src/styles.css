@@ -6,6 +6,8 @@
   --button-text-color: rgb(131, 217, 136);
   --thumb-color: #fefeff;
   --track-color: #0959bb;
+  --switch-color-active: #0f7af6;
+  --switch-color-disabled: #0d1f4a;
 }
 *{
   padding: 0;
@@ -146,7 +148,7 @@
   left: 0;
   width: 42px;
   height: 22px;
-  background-color: #fff;
+  background-color: var(--switch-color-disabled);
   border-radius: 11px;
   transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
   transition: all .25s linear;
@@ -170,7 +172,7 @@
   display: none;
 }
 .form-switch .switch:checked + i {
-  background-color: #4BD763;
+  background-color: var(--switch-color-active);
 }
 .form-switch .switch:checked + i::before {
   transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);
