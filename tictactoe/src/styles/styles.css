@@ -3,6 +3,8 @@
     --text-color: white;
     --border-color: #40587c;
     --button-text-color: rgb(131, 217, 136);
+    --board-color: #2091f7;
+    --item-color: #8cc4ec;
 }
 * {
     margin: 0;
@@ -16,22 +18,28 @@ body {
 }
 h1{
     text-align: center;
+    margin-top: 40px;
 }
 .board {
     display: grid;
-    margin: 0 auto;
+    gap: 20px;
+    margin: 40px auto;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     width: 400px;
     height: 400px;
     font-size: 40px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--board-color);
 }
 .board div {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--border-color);
     transition: all .5s;
+    border-radius: 20px;
+    background-color: var(--item-color);
 }
 .board div:hover {
     background-color: var(--border-color);
