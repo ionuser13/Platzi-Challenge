@@ -1,5 +1,5 @@
 const paragraphPass = document.querySelector("#password");
-const buttonCopy = document.querySelector("#button-copy")
+const buttonCopy = document.querySelector("#button-copy");
 const form = document.querySelector("#form");
 const inputLength = document.querySelector("#input-length");
 const passLength = document.querySelector("#password-length");
@@ -117,7 +117,6 @@ form.addEventListener("submit", (event) => {
   generatePassword(passwordLength, checks);
   buttonCopy.disabled = false;
 })
-
 inputLength.addEventListener("input", (e) => {
   passLength.innerText = e.target.value;
 })

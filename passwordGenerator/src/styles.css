@@ -4,6 +4,8 @@
   --text-color: white;
   --border-color: #40587c;
   --button-text-color: rgb(131, 217, 136);
+  --thumb-color: #fefeff;
+  --track-color: #0959bb;
 }
 *{
   padding: 0;
@@ -51,11 +53,14 @@
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin: 12px 0;
+  padding: 18px;
+  margin: 10px 0;
+  background-color: var(--input-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
 }
 #input-length {
-  width: 50%;
-  max-width: 70%;
+  width: 70%;
 }
 .text {
   display: flex;
