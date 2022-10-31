@@ -35,7 +35,7 @@
   margin: 0 auto
 }
 .password, .text, .settings {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--border-color)
 }
 .option {
@@ -85,6 +85,7 @@
 }
 .option input {
   margin-right: 10px;
+  display: flex;
 }
 #password:disabled {
   cursor: not-allowed;
@@ -96,24 +97,29 @@
   width: 100%;
   color: var(--text-color)
 }
-#button-copy {
-  border: 1px solid var(--border-color);
-  background-color: transparent;
+#button-copy, #generate-button {
+  background-image: linear-gradient(to bottom, #1a76f5, #226bf4, #2f60f2, #3d53ef, #4b45ea);
   color: var(--text-color);
-  font-size: 20px;
-  padding: 10px 50px;
-  border-radius: 15px;
-  margin: 10px 0;
-}
-#button-copy:hover {
-  cursor: pointer;
+  font-size: 12px;
+  padding: 16px 0;
+  border-radius: 8px;
+  margin: 8px 0;
   opacity: 0.6;
+  transition: .2s;
+  width: 100%;
+}
+#button-copy:hover, #generate-button:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 #button-copy:disabled {
   cursor: not-allowed;
 }
 #min-max, #password:disabled, .check {
   background-color: var(--input-color);
-  border: 1px solid var(--border-color);
   border-radius: 8px;
+}
+.check {
+  padding: 15px;
+  margin: 10px 0;
 }
