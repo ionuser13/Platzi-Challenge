@@ -48,10 +48,6 @@ function generatePassword(passwordLength, botoncitos) {
   if(botoncitos.symbols) {
     arrOfArr.push(symbols)
   }
-  if(botoncitos.words) {
-    arrOfArr =  [];
-    arrOfArr.push(words)
-  }
 
   let strongPass = [];  
   
@@ -105,14 +101,8 @@ form.addEventListener("submit", (event) => {
 
   const checks = {
     letters: formElement.letters.checked,
-    words: formElement.words.checked,
     numbers: formElement.numbers.checked,
     symbols: formElement.symbols.checked,
-  }
-  if(checks.words) {
-    formElement.letters.checked = false;
-    formElement.numbers.checked = false;
-    formElement.symbols.checked = false; 
   }
   generatePassword(passwordLength, checks);
   buttonCopy.disabled = false;
