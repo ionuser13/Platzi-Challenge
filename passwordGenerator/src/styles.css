@@ -66,10 +66,22 @@
   height: 2px;
   outline: none;
   opacity: 0.7;
-  -webkit-transition: 2s;
-  transition: opacity 2s;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
   margin: auto 0;
   background-color: var(--track-color);
+}
+#input-length:hover {
+  opacity: 1;
+}
+#input-length::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--thumb-color);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 .text {
   display: flex;
