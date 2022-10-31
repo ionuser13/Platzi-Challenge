@@ -14,18 +14,15 @@
 }
 .body {
   background-color: var(--bg-color);
-  width: 100vw;
   color:var(--text-color);
   font-family: sans-serif;
   font-size: 20px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .generate {
   max-width: 700px;
-  width: 80%;
   text-align: left;
   margin: 12px auto;
 }
@@ -37,14 +34,16 @@
   max-width: 400px;
   margin: 0 auto
 }
-.password, .text {
+.password, .text, .settings {
   font-size: 16px;
   color: var(--border-color)
 }
 .option {
   display: flex;
-  /* flex-direction: column; */
-  margin: 10px 0;
+  justify-content: space-between;
+  margin: 5px 0;
+  padding: 15px 0;
+  font-size: 20px;
 }
 #length-input {
   flex-direction: column;
@@ -55,9 +54,6 @@
   gap: 16px;
   padding: 18px;
   margin: 10px 0;
-  background-color: var(--input-color);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
 }
 #input-length {
   width: 70%;
@@ -93,9 +89,6 @@
 #password:disabled {
   cursor: not-allowed;
   border: none;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background: var(--input-color);
   padding: 10px 40px;
   margin: 10px 0;
   font-size: 26px;
@@ -118,4 +111,9 @@
 }
 #button-copy:disabled {
   cursor: not-allowed;
+}
+#min-max, #password:disabled, .check {
+  background-color: var(--input-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
 }
