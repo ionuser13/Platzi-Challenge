@@ -9,16 +9,28 @@
 </head>
 <body>
     <h1>Tic Tac Toe</h1>
-    <section>
-        <div class="board" id="board">
-
-        </div>
-        <div class="options">
-            <p>Escoge tu arma</p>
-            <button class="option-button">❌</button>
-            <button class="option-button">⭕</button>
-        </div>
-    </section>
+    <table>
+        <tr>
+            <td class="cell" id="0"></td>
+            <td class="cell" id="1"></td>
+            <td class="cell" id="2"></td>
+        </tr>
+        <tr>
+            <td class="cell" id="3"></td>
+            <td class="cell" id="4"></td>
+            <td class="cell" id="5"></td>
+        </tr>
+        <tr>
+            <td class="cell" id="6"></td>
+            <td class="cell" id="7"></td>
+            <td class="cell" id="8"></td>
+        </tr>
+    </table>
+    <!--indicates the winner of the game-->
+    <div class="endgame">
+        <div class="text"></div>
+    </div>
+    <button onclick="startGame()">Replay</button>
     <div id="modal" class="invisible"></div>
     <script src="./src/js/index.js"></script>
 </body>
