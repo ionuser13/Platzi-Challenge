@@ -1,11 +1,32 @@
-:root {
-    --bg-color: #121f3d;
-    --text-color: white;
-    --border-color: #40587c;
-    --button-text-color: rgb(131, 217, 136)
-}
-* {
+*, *::before, *::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+body {
+    background: linear-gradient(to right, #00AAFF, #00FF6C);
+}
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+    transition: .2s;
+}
+.calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, .90); 
+}
+.span-two {
+    grid-column: span 2;
 }
