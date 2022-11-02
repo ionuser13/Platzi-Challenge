@@ -9,7 +9,7 @@ const winCombos = [
     [1, 4, 7], 
     [2, 5, 8], 
     [0, 4, 8],
-    [2, 4, 6]
+    [6, 4, 2]
 ]
 const cells = document.querySelectorAll(".cell"); 
 startGame();
@@ -26,22 +26,22 @@ function startGame(){
 function turnClick(square) {
     if(typeof originBoard[square.target.id] == "number") {
         turn(square.target.id, player);
-        if(!checkTie()) turn(bestSpot(), computer)
+        if(!checkWin(originBoard, player) && !checkTie()) turn(bestSpot(), computer)
     }
 }
 
-function turn(squareId, player) {
-    originBoard[squareId] = player;
-    document.getElementById(squareId).innerText = player;
-    let gameWon = checkWin(originBoard, player)
+function turn(squareId, user) {
+    originBoard[squareId] = user;
+    document.getElementById(squareId).innerText = user;
+    let gameWon = checkWin(originBoard, user)
     if(gameWon) gameOver(gameWon);
 } 
-function checkWin(board, player) {
-    let plays = board.reduce((acumulator, element, index) => (element ===player)?acumulator.concat(index): acumulator, []);// finds every index that the player has played in
+function checkWin(board, user) {
+    let plays = board.reduce((a, e, i) => (e === user) ? a.concat(i) : a, []);// finds every index that the player has played in
     let gameWon = null;
     for(let [index, win] of winCombos.entries()){
         if(win.every(elem => plays.indexOf(elem) > -1)) {
-            gameWon = {index: index, player: player};
+            gameWon = {index: index, player: user};
             break;
         }
     }
@@ -58,17 +58,17 @@ function gameOver(gameWon) {
     declareWinner(gameWon.player == player ? "You win!": "You lose!")
 }
 //determinate the winner and show winner box
-function emptySquares() {
-    return originBoard.filter(s => typeof s == "number")
-}
-function bestSpot() {
-    return emptySquares()[0]
-}
-
 function declareWinner(who) {
     document.querySelector(".endgame").style.display = "block";
     document.querySelector(".endgame .text").innerText = who;
 }
+function emptySquares() {
+    return originBoard.filter(s => typeof s == "number")
+}
+function bestSpot() {
+    return minimax(originBoard, computer).index;
+}
+
 function checkTie() {
     if(emptySquares().length == 0) {
         for(let i = 0; i < cells.length; i++) {
@@ -79,4 +79,57 @@ function checkTie() {
         return true;
     }
     return false
+}
+
+function minimax(newBoard, user) {
+    let freeSpots = emptySquares();
+    if(checkWin(newBoard, player)) {
+        return {score: -10}
+    }
+    else if(checkWin(newBoard, computer)){
+        return {score: 10}
+    }
+    else if(freeSpots.length === 0) {
+        return {score: 0}
+    }
+    let moves = [];
+    for(let i = 0; i < freeSpots.length; i++){
+        let move = {};
+        move.index = newBoard[freeSpots[i]];
+        newBoard[freeSpots[i]] = user;
+
+        if(user == computer) {
+            let result = minimax(newBoard, player);
+            move.score = result.score;
+        }
+        else {
+            let result = minimax(newBoard, computer);
+            move.score = result.score;
+        }
+
+        newBoard[freeSpots[i]] = move.index;
+        moves.push(move);
+    }
+
+    let bestMove;
+    if(user === computer) {
+        let bestScore = -10000;
+        for (let i = 0; i < moves.length; i++) {
+            if(moves[i].score > bestScore) {
+                bestScore = moves[i].score;
+                bestMove = i;
+            }
+        }
+    }
+    else {
+        let bestScore = 10000;
+        for (let i = 0; i < moves.length; i++) {
+            if(moves[i].score < bestScore) {
+                bestScore = moves[i].score
+                bestMove = i;
+            }
+        }   
+    }
+
+    return moves[bestMove];
 }
