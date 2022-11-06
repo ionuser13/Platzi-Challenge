@@ -1,38 +1,44 @@
-# PlatziChallenge: Crea tu portafolio como javaScript developer
+# PlatziChallenge: Create your portfolio as a JavaScript Developer
 
-En este repositorio encontrarás una serie de proyectos para fortalecer tu portafolio como **JavaScript developer**, la rama **main** tendrá una serie de proyectos los cuales necesitan ser arreglados, en el apartados de issues de este mismo repositorio podrás ver todo lo que hace falta arreglar.
+In this repository, you will find a group of projects as part of the Platzi Challenge, whose goal it's to strengthen Front End Skills.
 
-Aquí abajo tienes la lista de proyectos que se actualizarán constantemente
+Below are the projects that are part of this challenge.
 
 ## Password generator
 
-Crea un generador de contraseñas que cumpla con las siguientes características:
+This is a password generator that has the following features:
 
-- Poder copiar la contraseña
-- Definir el total de caracteres que pueda llegar a tener nuestra contraseña
-- Generar contraseñas con solo numeros
-- Generar contraseñas con solo letras
-- Generar contraseñas con solo simbolos
-- Generar contraseñas con combinaciones de todo lo anterior
-- Generar contraseñas con palabras
+- Copy the generated password
+- Define the total number of characters that our password can have
+- Generate password with numbers only
+- Generate password with letters only
+- Generate password with symbols only
+- Generate passwords with combinations of all of the above
 
-Tecnologías
+Technologies:
 
 - HTML
 - CSS
-- JS
-- Axios (Opcional)
-
-Issues:
+- Vanilla JS
 
 ## Tic tac toe
 
-🚧WIP🚧
+This is a Tic Tac Toe game that has the following features:
+- Recognize when one of the players matches three symbols in a row, column, or diagonally.
+- An AI that chooses the best play against the player (user) using the minimax algorithm.
+- Display who is the winner of the current match.
+- Restart the match.
+
+Technologies:
+
+- HTML
+- CSS
+- Vanilla JS
 
 ## Calculator
 
-🚧WIP🚧
+This is a functional calculator that has the following features:
+- Perform basic operations (sum, rest, multiplication, division) with the inputs given by the user.
+- Delete the last digit and all displayed operations in the screen.
+- Separate big numbers by coma every three digits.
 
-## Github profile
-
-🚧WIP🚧
